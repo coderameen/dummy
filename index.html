@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jsclass</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div >
+    <input type="number" id="num1" placeholder="Enter number to check palindrome">
+    <br>
+    <br>
+    <button type="button" onclick="func()">Click</button>
+    <br>
+    <br>
+    <p id="showresults" style="color:red;font-size:20px">  
+    </p>
+  </div>
+
+<script type="text/javascript">
+  function func(){
+  var n = document.getElementById('num1').value;
+  if( n == '')
+  {
+    alert("Please Insert value to check palindrome!");
+  }
+  else{
+  
+var temp = n;
+var sum = 0;
+while(n > 0){
+  var r = parseInt(n % 10);
+  sum = parseInt((sum * 10) + r);
+  n = parseInt(n / 10);
+}
+
+if( sum ==  temp)
+{
+  //document.write("Palindrome!!");
+ document.getElementById('showresults').innerHTML = `It is palindrome`;
+}
+else{
+  //document.write("not palindrome");
+  document.getElementById('showresults').innerHTML = `Not a palindrome`;
+}
+  }
+  }
+
+</script>
+</body>
+
+</html>
